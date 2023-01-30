@@ -51,7 +51,7 @@ resource "aws_lambda_function" "example_function" {
   role = aws_iam_role.example_role.arn
   handler = "index.handler"
   runtime = "python3.8"
-  source_code = ./lambda.py
+  source_code = "lambda.py"
 
   ############ Adjust the source code above
   
