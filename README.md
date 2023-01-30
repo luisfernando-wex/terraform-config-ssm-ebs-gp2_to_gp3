@@ -4,17 +4,17 @@ This repository contains a Terraform template and a Lambda function to convert G
 
 #  Terraform template
 
-The Terraform template creates the following resources:
+- The Terraform template creates the following resources:
 
-An IAM role for the Lambda function
+1. An IAM role for the Lambda function
 
-An IAM policy that grants the Lambda function permissions to modify and describe EBS volumes
+2. An IAM policy that grants the Lambda function permissions to modify and describe EBS volumes
 
-A Lambda function that converts GP2 EBS volumes to GP3
+3. A Lambda function that converts GP2 EBS volumes to GP3
 
-A Config rule that checks for GP2 EBS volumes
+4. A Config rule that checks for GP2 EBS volumes
 
-A Config Config rule that associates the Lambda function with the Config rule
+5. A Config Config rule that associates the Lambda function with the Config rule
 
 An SSM Compliance item that defines the compliance standard for EBS volume type 
 
@@ -23,19 +23,18 @@ The Lambda function is written in Python and uses the boto3 library to interact 
 
 
 # How to use
-Clone this repository
+1. Clone this repository
 
-Install Terraform on your local machine
+2. Install Terraform on your local machine
 
-Use `terraform init` command to download the AWS provider
+- Use `terraform init` command to download the AWS provider
 
+- Use `terraform plan` command to check the execution plan
 
-Use `terraform plan` command to check the execution plan
+- Use `terraform apply` command to create the resources
 
-Use `terraform apply` command to create the resources
+- Use `terraform destroy` command to delete the resources
 
-Use `terraform destroy` command to delete the resources
+3. Zip the lambda function and upload it to your S3 bucket
 
-Zip the lambda function and upload it to your S3 bucket
-
-Update the lambda function source code in the terraform template with the S3 url of the zip file
+4. Update the lambda function source code in the terraform template with the S3 url of the zip file
