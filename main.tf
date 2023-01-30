@@ -52,6 +52,7 @@ resource "aws_lambda_function" "example_function" {
   handler = "index.handler"
   runtime = "python3.8"
   source_code = "lambda.py"
+}
 
   ############ Adjust the source code above
   
