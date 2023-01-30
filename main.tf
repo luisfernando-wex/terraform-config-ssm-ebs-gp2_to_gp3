@@ -46,14 +46,6 @@ resource "aws_iam_role_policy_attachment" "example_attach" {
   policy_arn = aws_iam_policy.example_policy.arn
 }
 
-resource "aws_lambda_function" "example_function" {
-  function_name = "example_function"
-  role = aws_iam_role.example_role.arn
-  handler = "index.handler"
-  runtime = "python3.8"
-  source_code = "lambda.py"
-}
-
   ############ Adjust the source code above
   
   resource "aws_lambda_function" "example_function" {
